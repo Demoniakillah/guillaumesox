@@ -1,0 +1,9 @@
+{% extends '@EasyAdmin/default/edit.html.twig' %}
+
+{% block body_javascript %}
+    {{ parent() }}
+    <script type="text/javascript" src="{{ asset('bundles/soxle/') }}source/js/soxle.js" 
+    id="soxle_js_params" 
+    selector = "#image_position"
+    url="{{ path('get_unavailable_image_position') }}"></script>
+{% endblock %}

@@ -1,0 +1,9 @@
+{% extends '@EasyAdmin/default/new.html.twig' %}
+
+{% block body_javascript %}
+    {{ parent() }}
+    <script type="text/javascript" src="{{ asset('bundles/soxle/') }}source/js/soxle.js" 
+    id="soxle_js_params" 
+    selector = "#navbarmenu_position"
+    url="{{ path('get_unavailable_navbarmenu_position') }}"></script>
+{% endblock %}

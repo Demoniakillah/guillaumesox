@@ -2,8 +2,3 @@ soxle:
     resource: "@SoxleBundle/Controller/"
     type:     annotation
     prefix:   /
-
-easy_admin_bundle:
-    resource: "@EasyAdminBundle/Controller/"
-    type:     annotation
-    prefix:   /admin

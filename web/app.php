@@ -1,7 +1,7 @@
 <?php
 
 use Symfony\Component\HttpFoundation\Request;
-umask(022);
+umask(0000);
 /**
  * @var Composer\Autoload\ClassLoader
  */

@@ -17,3 +17,5 @@ parameters:
 
     # A secret key that's used to generate certain security-related tokens
     secret:            ThisTokenIsNotSoSecretChangeIt
+    uri_prefix: '/images'
+    upload_destination: '%kernel.root_dir%/../web/bundles/soxle/image'

@@ -52,6 +52,10 @@ class Image {
      */
     private $uri;
 
+    public function getImagePath() {
+        return 'bundles/soxle/image/' . $this->url;
+    }
+
     /**
      * @param File|\Symfony\Component\HttpFoundation\File\UploadedFile $imageFile
      */

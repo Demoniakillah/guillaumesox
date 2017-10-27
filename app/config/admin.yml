@@ -8,6 +8,12 @@ easy_admin:
             class: SoxleBundle\Entity\Uri
         Image:
             class: SoxleBundle\Entity\Image
+            show:
+                fields:
+                    - { property: 'logo', type: 'image', 'base_path': '%upload_destination%' }
+                    - position
+                    - url
+                    - uri
             form:
                 fields:
                     - uri

@@ -1,0 +1,199 @@
+-- MySQL dump 10.13  Distrib 5.7.20, for Linux (i686)
+--
+-- Host: localhost    Database: SOXLE
+-- ------------------------------------------------------
+-- Server version	5.7.20-0ubuntu0.17.04.1
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8 */;
+/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
+/*!40103 SET TIME_ZONE='+00:00' */;
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
+--
+-- Current Database: `SOXLE`
+--
+
+CREATE DATABASE /*!32312 IF NOT EXISTS*/ `SOXLE` /*!40100 DEFAULT CHARACTER SET latin1 */;
+
+USE `SOXLE`;
+
+--
+-- Table structure for table `carousel_image`
+--
+
+DROP TABLE IF EXISTS `carousel_image`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `carousel_image` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `image` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `alt` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `titre` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `carousel_image`
+--
+
+LOCK TABLES `carousel_image` WRITE;
+/*!40000 ALTER TABLE `carousel_image` DISABLE KEYS */;
+/*!40000 ALTER TABLE `carousel_image` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `contenu_page`
+--
+
+DROP TABLE IF EXISTS `contenu_page`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `contenu_page` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `uri` int(11) DEFAULT NULL,
+  `html` longtext COLLATE utf8_unicode_ci,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `UNIQ_12348840841CB121` (`uri`),
+  CONSTRAINT `FK_12348840841CB121` FOREIGN KEY (`uri`) REFERENCES `uri` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `contenu_page`
+--
+
+LOCK TABLES `contenu_page` WRITE;
+/*!40000 ALTER TABLE `contenu_page` DISABLE KEYS */;
+INSERT INTO `contenu_page` VALUES (1,2,'<h1>RPM Blade</h1>\r\n<p class=\"soxle_p\">Il est courant de réaliser une échelle de rigidification à la base du moteur qui prend tous les « main caps » ensemble afin de limiter les vibrations et d’augmenter la résistance de la ligne d’arbre du vilebrequin. Main cap est le terme anglais pour palier de vilebrequin.</p>\r\n<p class=\"soxle_p\">D’origine, on peut par exemple trouver ça chez Honda:\r\n<img class=\"image\" src=\"\"/>\r\n</p>\r\n<p class=\"soxle_p\">Sur l’Integra Type R dont mon moteur Dart s’inspire, on trouve ça :\r\n<img class=\"image\" src=\"\"/>\r\n</p>\r\n<p class=\"soxle_p\">En préparation, nous avons l’entreprise Golden Eagle qui propose cette pièce qui prend les 5 paliers :\r\n<img class=\"image\" src=\"\"/>\r\n</p>\r\n <p class=\"soxle_p\">La fameuse entreprise Spoon propose ceci :\r\n</p>\r\n<p class=\"soxle_p\">On trouve aussi ce type de montage sur V8 américain (ici pour un bloc Ford), par exemple :\r\n<img class=\"image\" src=\"\"/>\r\n</p>\r\n<p class=\"soxle_p\">Et enfin, mon préféré, celui du génialissime digne fils de son père, le carter du Mugen MF204:\r\n<img class=\"image\" src=\"\"/>\r\n</p>\r\n<p class=\"soxle_p\">Maintenant que l’on a cette base de données et ce retour d’expérience, nous allons tenter de faire mieux.\r\n</p>\r\n<p class=\"soxle_p\">Ebauche d’un premier prototype afin de tester la viabilité de la pièce :\r\n<img class=\"image\" src=\"\"/> <img class=\"image\" src=\"\"/>\r\n</p>\r\n<p class=\"soxle_p\">2 girdles d’Intégra Type R et une pièce en aluminium découpée à l’eau puis soudée et surfacée. Cette pièce se trouve sur l’auto d’un ami depuis des années et donne entière satisfaction.\r\n<img class=\"image\" src=\"\"/>\r\n</p>\r\n<p class=\"soxle_p\">Charme discret :\r\n<img class=\"image\" src=\"\"/>\r\n</p>\r\n<p class=\"soxle_p\">Elaboration de la version carter sec :\r\n<img class=\"image\" src=\"\"/> <img class=\"image\" src=\"\"/> \r\n</p>\r\n<p class=\"soxle_p\">Fabrication d’un gabarit dessiné sur un logiciel puis découpé au laser pour valider le dessin:\r\n<img class=\"image\" src=\"\"/>\r\n</p>\r\n<p class=\"soxle_p\">Sur le bloc Dart, il n’y a pas d’échelle de rigidification. Dart considère que l’alliage utilisé pour le bloc lui confère suffisamment de rigidité pour se passer de cette pièce . L’aluminium utilisé est un aluminium de coulée intitulé « C355-T61 Virgin aerospace aluminum » sur la documentation technique du constructeur. Je ne connaissais pas cette normalisation. Après quelques recherches, je trouve que les caractéristiques de cet alu se rapprochent de l’alu aérospatial T6-6061. Alors, on en achète un gros morceau et feu !\r\n<img class=\"image\" src=\"\"/> <img class=\"image\" src=\"\"/> \r\n</p>\r\n<p class=\"soxle_p\">Vidéo de l\'usinage:\r\n<iframe width=\"640\" height=\"360\" src=\"https://www.youtube.com/embed/r6a-Uq0ldOA\" frameborder=\"0\" gesture=\"media\" allowfullscreen></iframe>\r\n<p/>\r\n<p class=\"soxle_p\">Voici une photo « romantique » du produit fini:\r\n<img class=\"image\" src=\"\"/>\r\n</p>\r\n<p class=\"soxle_p\">Comme la visserie automobile ne correspond pas aux standards industriels, on fabrique ensuite des vis sur mesure en qualité 12.9. Pour des raisons de coût, encore une fois, je pars de plus grosses vis en qualité 12.9 que je vais ensuite usiner.\r\nVidéo usinage vis:\r\n<iframe width=\"640\" height=\"360\" src=\"https://www.youtube.com/embed/EW-7Oaoa0dc\" frameborder=\"0\" gesture=\"media\" allowfullscreen></iframe>\r\n<img class=\"image\" src=\"\"/>\r\n</p>\r\n<p class=\"soxle_p\">De haut en bas:\r\nVis 12.9 avant modification, vis usinée, vis d’origine Dart\r\nTout le RPM-Blade est monté avec des rondelles de marque Nord-Lock (<a href=\"http://www.nord-lock.com/fr/nord-lock/wedge-locking/washers/introduction/\">http://www.nord-lock.com/fr/nord-lock/wedge-locking/washers/introduction/</a>) qui sont indessérables quel que soit le couple de serrage. C’était une véritable satisfaction de voir la maison mère « liker » les photos suivantes sur mon compte instagram:\r\n<img class=\"image\" src=\"\"/> <img class=\"image\" src=\"\"/>\r\n</p>\r\n<p class=\"soxle_p\">Le RPM-Blade pour carter sec en place dans l’auto:\r\n<img class=\"image\" src=\"\"/>\r\n</p>');
+/*!40000 ALTER TABLE `contenu_page` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `image`
+--
+
+DROP TABLE IF EXISTS `image`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `image` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `uri_id` int(11) DEFAULT NULL,
+  `url` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `position` int(11) NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `UNIQ_C53D045FF47645AE` (`url`),
+  KEY `IDX_C53D045FB6112AD5` (`uri_id`),
+  CONSTRAINT `FK_C53D045FB6112AD5` FOREIGN KEY (`uri_id`) REFERENCES `uri` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=24 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `image`
+--
+
+LOCK TABLES `image` WRITE;
+/*!40000 ALTER TABLE `image` DISABLE KEYS */;
+INSERT INTO `image` VALUES (4,2,'16541.jpg',1),(5,2,'546526.jpg',2),(6,2,'98562.jpg',3),(7,2,'5665.jpg',4),(8,2,'84965.jpg',5),(9,2,'4565.jpg',6),(10,2,'465445.jpg',7),(11,2,'94968965.jpg',8),(12,2,'96325.jpg',9),(13,2,'481.jpg',10),(14,2,'7856254862.jpg',11),(15,2,'147852.jpg',12),(16,2,'125164.jpg',13),(17,2,'458456.jpg',14),(18,2,'48516.jpg',15),(19,2,'963.jpg',17),(20,2,'95123.jpg',18),(21,2,'48584.jpg',19),(22,2,'84.jpg',20),(23,2,'456844.jpg',21);
+/*!40000 ALTER TABLE `image` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `nav_bar_menu`
+--
+
+DROP TABLE IF EXISTS `nav_bar_menu`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `nav_bar_menu` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `uri_id` int(11) DEFAULT NULL,
+  `titre` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `position` int(11) NOT NULL,
+  `menuPrincipal` tinyint(1) NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `UNIQ_62B7BA31462CE4F5` (`position`),
+  UNIQUE KEY `UNIQ_62B7BA31B6112AD5` (`uri_id`),
+  CONSTRAINT `FK_62B7BA31B6112AD5` FOREIGN KEY (`uri_id`) REFERENCES `uri` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `nav_bar_menu`
+--
+
+LOCK TABLES `nav_bar_menu` WRITE;
+/*!40000 ALTER TABLE `nav_bar_menu` DISABLE KEYS */;
+INSERT INTO `nav_bar_menu` VALUES (1,1,'Soxle',1,1),(2,NULL,'Oswald',3,1),(4,NULL,'Livre',5,1),(5,NULL,'The Horsepower Secret',6,0),(6,NULL,'The HorsepowerToolbox (teasing)',9,0),(7,NULL,'Ingenerie',2,1),(8,6,'Moteur Dart',10,0),(9,2,'RPM Blade',11,0),(10,NULL,'Guillotines',12,0),(11,NULL,'Civic 4x4',13,0),(12,5,'Calcul Turbo',15,0),(13,4,'Culasse',16,0),(14,3,'Turbo',17,0);
+/*!40000 ALTER TABLE `nav_bar_menu` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `navbar_enfant_parent`
+--
+
+DROP TABLE IF EXISTS `navbar_enfant_parent`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `navbar_enfant_parent` (
+  `parent` int(11) NOT NULL,
+  `enfant` int(11) NOT NULL,
+  PRIMARY KEY (`parent`,`enfant`),
+  KEY `IDX_1C77A5573D8E604F` (`parent`),
+  KEY `IDX_1C77A55734B70CA2` (`enfant`),
+  CONSTRAINT `FK_1C77A55734B70CA2` FOREIGN KEY (`enfant`) REFERENCES `nav_bar_menu` (`id`),
+  CONSTRAINT `FK_1C77A5573D8E604F` FOREIGN KEY (`parent`) REFERENCES `nav_bar_menu` (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `navbar_enfant_parent`
+--
+
+LOCK TABLES `navbar_enfant_parent` WRITE;
+/*!40000 ALTER TABLE `navbar_enfant_parent` DISABLE KEYS */;
+INSERT INTO `navbar_enfant_parent` VALUES (4,5),(4,6),(7,8),(7,9),(7,10),(7,11),(7,12),(7,13),(7,14);
+/*!40000 ALTER TABLE `navbar_enfant_parent` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `uri`
+--
+
+DROP TABLE IF EXISTS `uri`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `uri` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `value` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `UNIQ_841CB1211D775834` (`value`)
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `uri`
+--
+
+LOCK TABLES `uri` WRITE;
+/*!40000 ALTER TABLE `uri` DISABLE KEYS */;
+INSERT INTO `uri` VALUES (4,'culasse'),(6,'dart'),(1,'home'),(2,'rpm_blade'),(3,'turbo'),(5,'turbo_cal');
+/*!40000 ALTER TABLE `uri` ENABLE KEYS */;
+UNLOCK TABLES;
+/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
+
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+
+-- Dump completed on 2017-10-28  1:40:45
