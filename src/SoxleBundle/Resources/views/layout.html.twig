@@ -1,0 +1,73 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Soxle</title>
+        <meta name="description" content="Soxle">
+        <meta name="author" content="Demoniakillah">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
+        <link rel="stylesheet" type="text/css" href="{{ asset('bundles/soxle/') }}source/bootstrap-3.3.6-dist/css/bootstrap.css">
+        <link rel="stylesheet" type="text/css" href="{{ asset('bundles/soxle/') }}source/font-awesome-4.5.0/css/font-awesome.css">
+        <link rel="stylesheet" type="text/css" href="{{ asset('bundles/soxle/') }}style/slider.css">
+        <link rel="stylesheet" type="text/css" href="{{ asset('bundles/soxle/') }}style/mystyle.css">
+        <link rel="stylesheet" type="text/css" href="{{ asset('bundles/soxle/') }}style/soxle.css">
+    </head>
+    <body> 
+        <!-- Header -->
+        <div class="allcontain">
+            <div class="header">
+                <ul class="socialicon">
+                    <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                    <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                    <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                    <li><a href="#"><i class="fa fa-pinterest"></i></a></li>
+                </ul>
+                <ul class="givusacall" >
+                    <li>S O X L E . C O M</li>
+                </ul>
+
+            </div>
+            <!-- Navbar Up -->
+            <nav class="topnavbar navbar-default topnav">
+                <a class="navbar-brand logo" href="{{ path('home') }}"><img src="{{ asset('bundles/soxle/') }}image/logo1.png" alt="logo"></a>
+
+                <div class="container">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed toggle-costume" data-toggle="collapse" data-target="#upmenu" aria-expanded="false">
+                            <span class="sr-only"> Toggle navigaion</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                    </div>	 
+                </div>
+                <div class="collapse navbar-collapse" id="upmenu">
+                    <ul class="nav navbar-nav" id="navbarontop">
+                        {{ navbar | raw }}
+                    </ul>
+                </div>
+            </nav>
+        </div>
+        <div class="col-lg-10 col-lg-offset-1 col-sm-12 col-sm-offset-0" style="white-space: pre-wrap">
+            {{ content | raw }}
+        </div>
+    </div>
+    <!-- ____________________Featured Section ______________________________--> 
+
+    <script type="text/javascript" src="{{ asset('bundles/soxle/') }}source/bootstrap-3.3.6-dist/js/jquery.js"></script>
+    <script type="text/javascript" src="{{ asset('bundles/soxle/') }}source/js/isotope.js"></script>
+    <script type="text/javascript" src="{{ asset('bundles/soxle/') }}source/js/myscript.js"></script> 
+    <script type="text/javascript" src="{{ asset('bundles/soxle/') }}source/bootstrap-3.3.6-dist/js/jquery.1.11.js"></script>
+    <script type="text/javascript" src="{{ asset('bundles/soxle/') }}source/bootstrap-3.3.6-dist/js/bootstrap.js"></script>
+    <script type="text/javascript" src="{{ asset('bundles/soxle/') }}source/js/soxle.js" 
+            apiUrl="{{ path("get_page_img_api") }}" 
+            uri="{{uri}}" 
+            id="soxle_js_params"
+            imgBaseUrl="{{ asset('bundles/soxle/') }}image/">
+    </script>
+</body>
+</html>

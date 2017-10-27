@@ -1,0 +1,15 @@
+easy_admin:
+    entities:
+        NavBarMenu:
+            class: SoxleBundle\Entity\NavBarMenu
+        ContenuPage:
+            class: SoxleBundle\Entity\ContenuPage
+        Uri:
+            class: SoxleBundle\Entity\Uri
+        Image:
+            class: SoxleBundle\Entity\Image
+            form:
+                fields:
+                    - uri
+                    - position
+                    - { property: 'imageFile', type: 'file', label: 'Upload image', help: 'Selectionnez une image à uploader'}
